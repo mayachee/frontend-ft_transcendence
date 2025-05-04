@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournaments - ft_transcendence</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <div class="tournament-container">
+        <nav class="top-nav">
+            <div class="nav-left">
+                <a href="#" class="logo">ft_transcendence</a>
+                <div class="nav-links">
+                    <a href="dashboard.html">Dashboard</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="chat.html">Chat</a>
+                    <a href="tournament.html" class="active">Tournaments</a>
+                    <a href="#leaderboard">Leaderboard</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="user-menu">
+                    <div class="user-avatar"></div>
+                    <span id="username">Username</span>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="tournament-header">
+                <h1>Tournaments</h1>
+                <p>Compete in tournaments, climb the ranks, and become a champion!</p>
+            </div>
+
+
+            <div class="tournament-grid">
+                <div class="tournament-card">
+                    <span class="tournament-status status-active">Active</span>
+                    <h2 class="tournament-title">Spring Championship 2024</h2>
+                    <div class="tournament-info">
+                        <p>Players: 16/16</p>
+                        <p>Prize Pool: 1000 Points</p>
+                        <p>Round: Quarter-finals</p>
+                    </div>
+                    <div class="tournament-actions">
+                        <a href="#view" class="tournament-button primary-button">View Bracket</a>
+                    </div>
+                </div>
+
+                <div class="tournament-card">
+                    <span class="tournament-status status-upcoming">Upcoming</span>
+                    <h2 class="tournament-title">Weekly Tournament #42</h2>
+                    <div class="tournament-info">
+                        <p>Players: 8/16</p>
+                        <p>Prize Pool: 500 Points</p>
+                        <p>Starts in: 2 days</p>
+                    </div>
+                    <div class="tournament-actions">
+                        <a href="#register" class="tournament-button primary-button">Register</a>
+                    </div>
+                </div>
+
+                <div class="tournament-card">
+                    <span class="tournament-status status-completed">Completed</span>
+                    <h2 class="tournament-title">Winter Cup 2024</h2>
+                    <div class="tournament-info">
+                        <p>Winner: Player1</p>
+                        <p>Prize Pool: 2000 Points</p>
+                        <p>Participants: 32</p>
+                    </div>
+                    <div class="tournament-actions">
+                        <a href="#results" class="tournament-button secondary-button">View Results</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bracket-container">
+                <h2 class="bracket-title">Spring Championship 2024 - Bracket</h2>
+                <div class="bracket-grid">
+                    <div class="bracket-round">
+                        <h3>Quarter-finals</h3>
+                        <div class="bracket-match">
+                            <div class="bracket-player winner">
+                                <span>Player1</span>
+                                <span class="bracket-score">11</span>
+                            </div>
+                            <div class="bracket-player">
+                                <span>Player2</span>
+                                <span class="bracket-score">8</span>
+                            </div>
+                        </div>
+                        <div class="bracket-match">
+                            <div class="bracket-player winner">
+                                <span>Player3</span>
+                                <span class="bracket-score">11</span>
+                            </div>
+                            <div class="bracket-player">
+                                <span>Player4</span>
+                                <span class="bracket-score">6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bracket-round">
+                        <h3>Semi-finals</h3>
+                        <div class="bracket-match">
+                            <div class="bracket-player">
+                                <span>TBD</span>
+                                <span class="bracket-score">-</span>
+                            </div>
+                            <div class="bracket-player">
+                                <span>TBD</span>
+                                <span class="bracket-score">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bracket-round">
+                        <h3>Finals</h3>
+                        <div class="bracket-match">
+                            <div class="bracket-player">
+                                <span>TBD</span>
+                                <span class="bracket-score">-</span>
+                            </div>
+                            <div class="bracket-player">
+                                <span>TBD</span>
+                                <span class="bracket-score">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="footer"></div>
+
+        <!-- Add Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+        <script>
+            // Load user data from localStorage
+            const user = JSON.parse(localStorage.getItem('user')) || { username: 'Guest' };
+            document.getElementById('username').textContent = user.username;
+        </script>
+
+        <script>
+            // Load the footer from the external HTML file
+            fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data)
+            .catch(error => console.error('Error loading the footer:', error));
+        </script>
+    </div>
+</body>
+</html> 
